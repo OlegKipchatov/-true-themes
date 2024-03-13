@@ -1,5 +1,5 @@
 {
-  "name": "@true/theme",
+  "name": "@true/themes",
   "version": "0.0.1",
   "description": "Theme provider for your React application",
   "main": "index.js",
