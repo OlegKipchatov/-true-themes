@@ -1,0 +1,34 @@
+{
+  "name": "@true/themes",
+  "version": "0.0.1",
+  "description": "Theme provider for your React application",
+  "main": "./dist/index.jsx",
+  "files": [
+    "./dist"
+  ],
+  "scripts": {
+    "build": "tsup src --dts",
+    "pack-package": "npm run build && npm pack"
+  },
+  "peerDependencies": {
+    "react": "^16.8 || ^17 || ^18",
+    "react-dom": "^16.8 || ^17 || ^18"
+  },
+  "dependencies": {
+    "js-cookie": "^3.0.5"
+  },
+  "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
+    "@types/react": "^18.2.65",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "keywords": [
+    "react",
+    "themeprovider",
+    "choose theme",
+    "switch theme"
+  ],
+  "author": "Oleg Kipchatov",
+  "license": "ISC"
+}
