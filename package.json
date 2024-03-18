@@ -1,42 +1,18 @@
 {
-  "name": "@true/themes",
-  "version": "0.0.1",
-  "description": "Theme provider for your React application",
-  "main": "./dist/index.jsx",
-  "files": [
-    "./dist"
-  ],
   "scripts": {
-    "lint": "eslint ./src",
-    "build": "tsc",
-    "pack": "npm run build && npm pack"
-  },
-  "peerDependencies": {
-    "react": "^16.8 || ^17 || ^18",
-    "react-dom": "^16.8 || ^17 || ^18"
-  },
-  "dependencies": {
-    "js-cookie": "^3.0.5"
+    "lint": "eslint ./package",
+    "build": "pnpm --filter @true/themes build",
+    "pack": "pnpm --filter @true/themes pack-package"
   },
   "devDependencies": {
-    "@types/js-cookie": "^3.0.6",
-    "@types/react": "^18.2.65",
     "@typescript-eslint/eslint-plugin": "^7.1.0",
     "@typescript-eslint/parser": "^7.1.0",
     "eslint": "8.57.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.29.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "typescript": "^5.4.2",
+    "tsup": "^8.0.2",
     "typescript-eslint": "^7.1.1"
   },
-  "keywords": [
-    "react",
-    "themeprovider",
-    "choose theme",
-    "switch theme"
-  ],
   "author": "Oleg Kipchatov",
   "license": "ISC"
 }
