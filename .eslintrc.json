@@ -1,6 +1,6 @@
 {
   "extends": ["airbnb", "airbnb/hooks", "plugin:@typescript-eslint/recommended", "eslint:recommended"],
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["import", "@typescript-eslint"],
   "parser": "@typescript-eslint/parser",
   "rules": {
       "max-len": ["error", { "code": 120 }],
@@ -23,7 +23,15 @@
             "maximum": 1
         }
       ],
+      "react/jsx-props-no-spreading": "off",
       "no-unused-vars": "off",
+      "import/extensions": ["error", { "ts": "never" }],
+      "import/no-unresolved": "off",
+      "import/first": "error",
+      "import/order": "off",
+      "import/newline-after-import": "error",
+      "import/no-duplicates": "error",
+      "import/prefer-default-export": "off",
       "@typescript-eslint/no-unused-vars": ["error"]
   },
   "globals": {
@@ -33,5 +41,6 @@
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": "latest"
-  }
+  },
+  "ignorePatterns": ["dist"]
 }

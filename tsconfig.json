@@ -1,0 +1,18 @@
+{
+  "includes": ["./src/*"],
+  "exclude": ["node_modules", "./dist/**/*"],
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "es5",
+    "declaration": true,
+    "noEmit": false,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
+  }
+}
