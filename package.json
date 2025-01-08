@@ -2,17 +2,33 @@
   "scripts": {
     "lint": "eslint ./package",
     "build": "pnpm --filter @true/themes build",
-    "pack": "pnpm --filter @true/themes pack-package"
+    "pack": "pnpm --filter @true/themes pack-package",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.3",
+    "@storybook/addon-essentials": "^8.4.7",
+    "@storybook/addon-interactions": "^8.4.7",
+    "@storybook/addon-onboarding": "^8.4.7",
+    "@storybook/blocks": "^8.4.7",
+    "@storybook/react": "^8.4.7",
+    "@storybook/react-vite": "^8.4.7",
+    "@storybook/test": "^8.4.7",
     "@typescript-eslint/eslint-plugin": "^7.1.0",
     "@typescript-eslint/parser": "^7.1.0",
     "eslint": "8.57.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-storybook": "^0.11.2",
+    "prop-types": "^15.8.1",
+    "storybook": "^8.4.7",
     "tsup": "^8.0.2",
     "typescript-eslint": "^7.1.1"
   },
   "author": "Oleg Kipchatov",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "react": "18"
+  }
 }

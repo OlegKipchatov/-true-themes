@@ -6,9 +6,9 @@ import React, {
 import {
   getThemeStorage, getSystemTheme, setRootTheme, setThemeStorage, removeRootTheme,
 } from './helpers';
-import { TrueThemeProviderProps, UseTrueThemeProps } from './types';
+import type { ThemeProviderProps, UseThemeProps } from './types';
 
-const TrueThemeContext = createContext<UseTrueThemeProps | undefined>(undefined);
+const TrueThemeContext = createContext<UseThemeProps | undefined>(undefined);
 
 const getDefaultTheme = (
   theme: string | undefined,
@@ -16,9 +16,9 @@ const getDefaultTheme = (
   isCookieStorage: boolean,
 ) => getThemeStorage(storageKey, isCookieStorage) ?? theme ?? getSystemTheme();
 
-function TrueTheme(props: TrueThemeProviderProps) {
+const TrueTheme = (props: ThemeProviderProps) => {
   const {
-    defalutTheme,
+    defaultTheme,
     attribute = 'class',
     storageKey = 'theme-mode',
     isCookieStorage = false,
@@ -28,7 +28,7 @@ function TrueTheme(props: TrueThemeProviderProps) {
   const [theme, setTheme] = useState<string | undefined>(undefined);
 
   useLayoutEffect(() => {
-    const useTheme = getDefaultTheme(defalutTheme, storageKey, isCookieStorage);
+    const useTheme = getDefaultTheme(defaultTheme, storageKey, isCookieStorage);
     setTheme(useTheme);
   }, []);
 
@@ -53,15 +53,15 @@ function TrueTheme(props: TrueThemeProviderProps) {
     });
   }, []);
 
-  const providerValue = useMemo<UseTrueThemeProps>(() => ({ theme, setTheme: updateTheme }), [theme]);
+  const providerValue = useMemo<UseThemeProps>(() => ({ theme, setTheme: updateTheme }), [theme]);
   return (
     <TrueThemeContext.Provider value={providerValue}>
       {children}
     </TrueThemeContext.Provider>
   );
-}
+};
 
-export function ThemesProvider(props: TrueThemeProviderProps) {
+export const ThemeProvider = (props: ThemeProviderProps) => {
   const { children } = props;
   const context = useContext(TrueThemeContext);
 
@@ -70,13 +70,15 @@ export function ThemesProvider(props: TrueThemeProviderProps) {
   }
 
   return <TrueTheme {...props} />;
-}
+};
 
 export const useTheme = () => {
   const context = useContext(TrueThemeContext);
   if (!context) {
-    throw new Error('useTheme must be used with TrueThemeProvider');
+    throw new Error('useTheme must be used with ThemesProvider');
   }
 
   return context;
 };
+
+export type { ThemeProviderProps, UseThemeProps };
