@@ -1,0 +1,18 @@
+.theme-component {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+html[theme='light'] .theme-component {
+    background-color: white;
+    color: black;
+}
+
+html[theme='dark'] .theme-component {
+    background-color: black;
+    color: white;
+}

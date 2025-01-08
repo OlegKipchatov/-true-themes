@@ -17,6 +17,6 @@
     "allowSyntheticDefaultImports": true,
     "downlevelIteration": true
   },
-  "include": ["package"],
+  "include": ["package", "stories"],
   "exclude": ["**/node_modules", "**/dist"]
 }

@@ -1,20 +1,17 @@
-import { Dispatch, ReactNode, SetStateAction } from 'react';
+import type { Dispatch, ReactNode, SetStateAction } from 'react';
 
-/**
- * @param [theme] - Current theme
- * @param [setTheme] - Function for update current theme
- */
-export type UseTrueThemeProps = {
+export type UseThemeProps = {
+  /**
+   * Current theme
+   */
   theme: string | undefined,
+  /**
+   * Function for update current theme
+   */
   setTheme: Dispatch<SetStateAction<string | undefined>>
 }
 
 /**
- * @param [defalutTheme] - Set default theme for application
- * @param [attribute] - Set theme name to attribute. If set 'class' theme will added to class list documentElement.
- * Exmaple: `attribute='data-theme-mode'`
- * @param [storageKey] - Key for storage
- * @param [isCookieStorage] - Flag for use cookie storage instead local storage
  * @default ```json
  * {
  *  "attribute": "class",
@@ -23,10 +20,26 @@ export type UseTrueThemeProps = {
  * }
  * ```
 */
-export type TrueThemeProviderProps = {
-  defalutTheme?: string,
+export type ThemeProviderProps = {
+  /**
+   * Set default theme for application
+   */
+  defaultTheme?: string,
+  /**
+   * Set theme name to attribute. If set 'class' theme will added to class list documentElement.
+   * Example: `attribute='data-theme-mode'`
+   */
   attribute?: string,
+  /**
+   * Key for storage
+   */
   storageKey?: string,
+  /**
+   * Flag for use cookie storage instead local storage
+   */
   isCookieStorage?: boolean,
+  /**
+   * Flag for use cookie storage instead local storage
+   */
   children: ReactNode,
 };
