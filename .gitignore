@@ -5,3 +5,4 @@ vitest.config.*.timestamp*
 
 storybook-static
 .nx
+dist
