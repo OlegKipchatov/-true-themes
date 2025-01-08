@@ -1,0 +1,9 @@
+{
+  "name": "true-themes",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/true-themes/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project true-themes --web",
+  "targets": {}
+}

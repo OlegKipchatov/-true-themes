@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
-import type { ThemeProviderProps } from '../package/src';
-import { ThemeProvider, useTheme } from '../package/src';
+import type { ThemeProviderProps } from 'true-themes';
+import { ThemeProvider, useTheme } from 'true-themes';
 
 import classes from './true-theme.module.css';
 
@@ -19,7 +19,7 @@ const ThemeComponent = () => {
 
   const handleClick = useCallback(() => {
     setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
-  }, []);
+  }, [setTheme]);
 
   return (
     <div
